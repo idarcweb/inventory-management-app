@@ -28,7 +28,7 @@ const Expenses = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
-  
+
   const dispatch = useAppDispatch();
 
   const isLoading = useAppSelector((state) => state.global.isLoading);
@@ -41,7 +41,7 @@ const Expenses = () => {
     });
   }, [dispatch]);
 
-  const expenses = useMemo(() => expenseByCategory ?? [], [expenseByCategory]);
+  const expenses = useMemo(() => expenseByCategory ?? [], []);
 
   const parseDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -77,8 +77,7 @@ const Expenses = () => {
 
   const classNames = {
     label: "block text-sm font-medium text-black",
-    selectInput:
-      `mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md text-[#000]`,
+    selectInput: `mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md text-[#000]`,
   };
 
   if (isLoading) {

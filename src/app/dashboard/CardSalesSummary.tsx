@@ -89,7 +89,7 @@ const CardSalesSummary = () => {
               </select>
             </div>
             {/* CHART */}
-           <Chart data={salesData} timeframe={timeframe}/>
+           <Chart data={salesData}/>
           </div>
 
           {/* FOOTER */}

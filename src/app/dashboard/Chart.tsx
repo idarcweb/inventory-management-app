@@ -7,14 +7,13 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { SalesSummary } from "../types";
+import { SalesSummary } from "../../state/api";
 
 interface ChartProps {
   data: SalesSummary[];
-  timeframe: string;
 }
 
-const Chart: React.FC<ChartProps> = ({ data, timeframe }) => {
+const Chart: React.FC<ChartProps> = ({ data, }) => {
 return (
     <ResponsiveContainer width="100%" height={280} className="px-7">
       <BarChart
